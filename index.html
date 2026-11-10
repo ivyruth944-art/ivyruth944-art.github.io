@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<title>Redirecting…</title>
+</head>
+<body>
+<p id="m">Redirecting…</p>
+<script id="maria-links" type="application/json">{"chocolate-chip-one-bowl-brownies":"https://avacheflife.com/chocolate-chip-one-bowl-brownies/","slow-cooker-butter-chicken":"https://avacheflife.com/slow-cooker-butter-chicken/","beef-taco-meat":"https://avacheflife.com/beef-taco-meat/","juicy-oven-roasted-turkey":"https://avacheflife.com/juicy-oven-roasted-turkey/","the-best-broccoli-cheese-soup-better-than-panera-copycat":"https://avacheflife.com/the-best-broccoli-cheese-soup-better-than-panera-copycat/","minute-baked-lime-cilantro-chicken-breasts-2":"https://avacheflife.com/minute-baked-lime-cilantro-chicken-breasts-2/","asian-fusion-ground-chicken-stir-fry":"https://avacheflife.com/asian-fusion-ground-chicken-stir-fry/","beef-noodle-soup":"https://avacheflife.com/beef-noodle-soup/","glazed-pumpkin-streusel-coffee-cake":"https://avacheflife.com/glazed-pumpkin-streusel-coffee-cake/","garlic-butter-chicken-2":"https://avacheflife.com/garlic-butter-chicken-2/","slow-cooker-beef-and-barley-soup":"https://avacheflife.com/slow-cooker-beef-and-barley-soup/","the-best-lemon-loaf-better-than-starbucks-copycat":"https://avacheflife.com/the-best-lemon-loaf-better-than-starbucks-copycat/","carmelitas":"https://avacheflife.com/carmelitas/","the-best-oatmeal-m-and-m-chocolate-chip-cookies":"https://avacheflife.com/the-best-oatmeal-m-and-m-chocolate-chip-cookies/","honey-lime-chicken":"https://avacheflife.com/honey-lime-chicken/","grilled-chicken-caprese":"https://avacheflife.com/grilled-chicken-caprese/","greek-lemon-chicken-and-orzo":"https://avacheflife.com/greek-lemon-chicken-and-orzo/","caramel-chocolate-chip-brownies":"https://avacheflife.com/caramel-chocolate-chip-brownies/","slow-cooker-honey-garlic-pot-roast":"https://avacheflife.com/slow-cooker-honey-garlic-pot-roast/","cherry-tomato-caprese-salad":"https://avacheflife.com/cherry-tomato-caprese-salad/","chicken-satay-crispy-rice-salad-bowls":"https://avacheflife.com/chicken-satay-crispy-rice-salad-bowls/","bean-soup":"https://avacheflife.com/bean-soup/","easy-30-minute-homemade-chicken-noodle-soup":"https://avacheflife.com/easy-30-minute-homemade-chicken-noodle-soup/","slow-cooker-chicken-and-noodles":"https://avacheflife.com/slow-cooker-chicken-and-noodles/","honey-baked-ham-recipe":"https://avacheflife.com/honey-baked-ham-recipe/","chocolate-dump-cake-with-chocolate-pudding":"https://avacheflife.com/chocolate-dump-cake-with-chocolate-pudding/"}</script>
+<script>
+(function () {
+  var links = JSON.parse(document.getElementById("maria-links").textContent);
+  var parts = location.search.replace(/^\?/, "").split("&");
+  var slug = "";
+  try { slug = decodeURIComponent(parts.shift() || ""); } catch (e) {}
+  slug = slug.toLowerCase().replace(/\/+$/, "");
+  var to = links[slug];
+  if (!to) { document.title = "Page not found"; document.getElementById("m").textContent = "Page not found."; return; }
+  var extra = parts.filter(Boolean).join("&");
+  if (extra) {
+    var h = to.indexOf("#"), hash = h < 0 ? "" : to.slice(h), u = h < 0 ? to : to.slice(0, h);
+    to = u + (u.indexOf("?") < 0 ? "?" : "&") + extra + hash;
+  }
+  location.replace(to);
+})();
+</script>
+</body>
+</html>
